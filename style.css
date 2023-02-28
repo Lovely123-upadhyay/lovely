@@ -1092,7 +1092,7 @@ footer a{
 
   .section-title-02{
     font-size: 2em;
-    margin-top: 30px;
+    margin-top: 80px;
     transform: translateY(-65px);
   }
 
@@ -1230,3 +1230,12 @@ footer a{
 
 
 
+@media screen and (max-width: 501px)
+{
+  #about{
+    margin-top: 20px;
+  }
+}
+.blr1{
+  overflow: hidden;
+}
