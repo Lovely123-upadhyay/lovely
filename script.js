@@ -1,50 +1,28 @@
-
-// scroll bar script
-window.onscroll = function() {
-    myFunction()
-};
-
-function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
-}
+//Navigation bar effects on scroll
+window.addEventListener("scroll" ,function(){
+    const header =document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+});
 
 
+//Responsive navigation menu toggle
+const menuBtn =document.querySelector(".nav-menu-btn");
+const closeBtn =document.querySelector(".nav-close-btn");
+const navigation =document.querySelector(".navigation");
+const navItem =document.querySelectorAll(".nav-items a");
 
-// smooth up script
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-  
-    for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-  
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add("active");
-      } else {
-        reveals[i].classList.remove("active");
-      }
-    }
-  }
-  
-  window.addEventListener("scroll", reveal);
+menuBtn.addEventListener("click", () =>{
+    navigation.classList.add("active");
+});
 
-  
+closeBtn.addEventListener("click", () =>{
+    navigation.classList.remove("active");
+});
 
-// about box script
-let tablinks = document.getElementsByClassName("tab-links");
-let tabcontents = document.getElementsByClassName("tab-contents");
+navItem.forEach((navItem)=>{
+    navItem.addEventListener("click", ()=>{
+        navigation.classList.remove("active");
+    })
+});
 
-function opentab(tabname){
-    for(let i of tablinks){
-        i.classList.remove("active-link");
-    }
-    for(let i of tabcontents){
-        i.classList.remove("active-tab");
-    }
-    event.currentTarget.classList.add("active-link");
-    document.getElementById(tabname).classList.add("active-tab");
-}
+
