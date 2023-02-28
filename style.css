@@ -1239,3 +1239,15 @@ footer a{
 .blr1{
   overflow: hidden;
 }
+.techstack{
+  color: #444436 !IMPORTANT;
+    font-weight: 800;
+    box-shadow: 10px 6px 1px grey;
+    padding: 5px 4px;
+    border-radius: 10px;
+}
+.techstack1{
+  color: #462424 !IMPORTANT;
+    font-weight: 300;
+    font-family: sans-serif;
+}
